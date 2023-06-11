@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <title>Home</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Todo List App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'add_task' %}"><i class="fas fa-plus"></i> Add Tasks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'categories' %}"><i class="fas fa-plus"></i> Categories</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-nav">
+          <a class="nav-link" href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile</a>
+          <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container-task">
+    <h2>Task List</h2>
+
+    {% for task in tasks %}
+    <div class='task'>
+      <h4>{{ task.title }}</h4>
+      <p class="com">{{ task.description }}</p>
+      <p class="com">Status: {{ task.status }}</p>
+
+      {% with task_id=task.task_id %}
+      {% for comment in task.comments %}
+      <p>{{ comment.comment_text }}</p>
+      {% empty %}
+      <p>No comments yet.</p>
+      {% endfor %}
+
+      <form method="POST" action="{% url 'add_comment' %}">
+        {% csrf_token %}
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        <input type="hidden" name="task_id" value="{{ task_id }}">
+        <textarea class="form-control" name="comment_text" placeholder="Add a comment" required></textarea>
+        <button type="submit" class="btn">Add Comment</button>
+      </form>
+      {% endwith %}
+
+      <a href="{% url 'edit_task' task.task_id %}" class="btn">Edit</a>
+      <a href="{% url 'delete_task' task.task_id %}" class="btn">Delete</a>
+    </div>
+    {% empty %}
+    <p>No tasks found.</p>
+    {% endfor %}
+  </div>
+</body>
+
+</html>
