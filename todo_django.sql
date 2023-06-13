@@ -236,7 +236,6 @@ CREATE TABLE `comments` (
 
 LOCK TABLES `comments` WRITE;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
-INSERT INTO `comments` VALUES (1,4,6,'asdsad',NULL),(2,4,6,'sadsa',NULL),(3,5,6,'sadsadsa',NULL),(4,5,6,'asdsa',NULL),(6,8,11,'sadsadsad',NULL),(15,NULL,15,'sadsa',NULL),(16,NULL,15,'as',NULL),(17,NULL,15,'s',NULL),(18,NULL,15,'s',NULL),(19,NULL,15,'s',NULL),(20,NULL,15,'sss',NULL),(21,NULL,15,'s',NULL),(22,NULL,15,'asd',NULL),(23,NULL,15,'sd',NULL),(24,NULL,15,'asd',NULL),(25,22,15,'sda',NULL),(26,22,15,'hellow',NULL),(27,22,15,'hi\r\n',NULL),(30,24,15,'sad',NULL),(32,52,25,'UwU',NULL);
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -374,7 +373,7 @@ CREATE TABLE `personal_information` (
   PRIMARY KEY (`personal_id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `personal_information_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -383,7 +382,7 @@ CREATE TABLE `personal_information` (
 
 LOCK TABLES `personal_information` WRITE;
 /*!40000 ALTER TABLE `personal_information` DISABLE KEYS */;
-INSERT INTO `personal_information` VALUES (7,8,'asdsa','dsad','sadsa','dsadsa','2023-05-15','','sadsadsa',NULL),(8,10,'sadsadsa','dsad','adsa','asds','2023-05-16','','asdsa,dsad,sadsad,sadsa,dsadas,',NULL),(9,10,'asds','adsadsa','dsa','dsadsa','2023-05-26',_binary '1683692492238.jpg','dsadsa,sad,sad,sa','asdsadsadsa'),(10,11,'Bryan','Once','BM. Road','0981222247','2023-05-19',_binary 'Untitled_design__2_-removebg-preview.png','facebook, instagram, youtube',' tang inang buhay to'),(11,12,'bryan','qwe','sadsa','sadsadas','2023-05-03',_binary '1684841857551.jpg','sadsa,dsa,d,as,dsad,sadsa,sadsad,sasad,sad',' sadsa'),(12,13,'bryan','tanga','asdsa','dsadsa','2023-05-11',_binary '1684893267653.jpg','bryanpaul.once.1',' whut?'),(13,14,'sadsa','dsadsa','sad','sadasdas','2023-05-10',_binary '1684815238229.png','https://www.facebook.com/bryanpaul.once.1/',' sadsa'),(14,12,'bryan','qwe','sadsa','sadsadas','2023-05-03',_binary '1684841857551.jpg','sadsa,dsa,d,as,dsad,sadsa,sadsad,sasad,sad',' sadsa'),(15,12,'bryan','qwe','sadsa','sadsadas','2023-05-03',_binary '1684841857551.jpg','sadsa,dsa,d,as,dsad,sadsa,sadsad,sasad,sad',' sadsa'),(16,12,'bryan','qwe','sadsa','sadsadas','2023-05-03',_binary '1684841857551.jpg','sadsa,dsa,d,as,dsad,sadsa,sadsad,sasad,sad',' sadsa'),(17,12,'bryan','qwe','sadsa','sadsadas','2023-05-03',_binary '1684841857551.jpg','sadsa,dsa,d,as,dsad,sadsa,sadsad,sasad,sad',' sadsa'),(20,21,'asd','sadsad','asdsadsa','dsadsadsa','2023-06-28',_binary 'images/B-connect.png','asdsa,dsa,dsa','sadsada'),(21,22,'das','dsadsa','dsad','sadas','2023-06-21',_binary 'images/Gray_and_White_Clean_Office_Assistant_Resume.png','dsa,asd,sad,sad,a,dsa,asd,','sadsa'),(22,23,'adsa','dsad','sads','dsadsa','2023-06-14',_binary 'images/staff.png','asdasdsa,sad,sa,d,sa,dsa,d,sasad,','asd'),(23,24,'asdsadas','a','dsad','sadsa','2023-06-07',_binary 'images/CaptureE4.PNG','asdsa','sd'),(24,25,'Bryan Pauls','Onces','Bm. Road, Brgy. San Manuel, P.P.C.s','09217942891s','2023-05-30',_binary 'images/1684893267597.jpg','UwUs','Fuck Djangos');
+INSERT INTO `personal_information` VALUES (25,26,'Frisah','Sevilla','3994 Southside Lane, Los Angeles','0945-456-5825','2023-06-12',_binary 'images/338543268_241186388469939_4811708737153551967_n_AoorN4Q.jpg','https://www.youtube.com/watch?v=dQw4w9WgXcQ','The moments of happiness we enjoy take us by surprise'),(26,27,'Honelyn','Vigo','2532 Huntz Lane, Seattle','0932-235-5678','2023-06-14',_binary 'images/335802492_1506705133192858_8043825899245645219_n.png','https://youtube.com/shorts/KUM2p2Weicg?feature=share','One of the secrets of a happy life is continuous small treats');
 /*!40000 ALTER TABLE `personal_information` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -410,7 +409,7 @@ CREATE TABLE `task_category` (
 
 LOCK TABLES `task_category` WRITE;
 /*!40000 ALTER TABLE `task_category` DISABLE KEYS */;
-INSERT INTO `task_category` VALUES (1,1),(4,1),(5,1),(11,1),(25,1),(44,1),(45,1),(47,1),(49,1),(51,1),(52,1),(2,2),(9,2),(10,2),(14,2),(15,2),(16,2),(29,2),(48,2),(50,2),(8,3),(12,3),(13,3),(20,3),(24,3),(26,3),(39,3),(22,4),(40,4);
+INSERT INTO `task_category` VALUES (58,1),(59,1),(55,2),(56,3),(54,4),(57,5);
 /*!40000 ALTER TABLE `task_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -432,7 +431,7 @@ CREATE TABLE `tasks` (
   PRIMARY KEY (`task_id`),
   KEY `tasks_ibfk_1_idx` (`user_id`),
   CONSTRAINT `tasks_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -441,7 +440,7 @@ CREATE TABLE `tasks` (
 
 LOCK TABLES `tasks` WRITE;
 /*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
-INSERT INTO `tasks` VALUES (1,1,'asdsad','sadsa','Pending',NULL,'2023-06-10 05:05:13'),(2,2,'sads','adsa','Pending',NULL,'2023-06-10 05:05:13'),(4,6,'asad','sadsada','Pending','2023-05-19 16:22:08','2023-05-19 16:22:08'),(5,6,'asdsa','dsadsa','In Progress','2023-05-19 16:22:52','2023-05-19 16:22:52'),(8,11,'sadsad','sadsa','Pending','2023-05-21 18:00:38','2023-05-21 18:00:49'),(9,11,'asd','sadsa','Pending','2023-05-21 18:01:43','2023-05-21 18:01:43'),(10,12,'sda','sadsadsa','In Progress','2023-05-23 17:20:56','2023-05-23 17:21:00'),(11,12,'asd','sadsa','In Progress','2023-05-24 02:52:02','2023-05-24 02:52:02'),(12,12,'adsadsa','asds','Completed','2023-05-24 02:52:12','2023-05-24 02:52:12'),(13,3,'sad','sadsadsa','In Progress','2023-05-27 19:19:58','2023-06-10 05:05:13'),(14,5,'asdsa','dsa','In Progress','2023-05-27 19:21:02','2023-05-27 19:21:02'),(15,4,'dsasad','sadsa','In Progress','2023-05-27 19:21:41','2023-06-10 05:05:13'),(16,6,'sad','sadsa','Completed','2023-05-29 19:33:34','2023-06-10 05:05:13'),(17,24,'test1','asdsadsa','In Progress',NULL,NULL),(18,24,'test1','asdsadsa','In Progress',NULL,NULL),(19,24,'test1','asdsadsa','In Progress',NULL,NULL),(20,24,'test1','asdsadsa','In Progress',NULL,NULL),(22,15,'test3456s','dsadsah','Completed',NULL,NULL),(24,15,'asdsa','sad','Completed',NULL,NULL),(25,15,'test123','qwe','Pending',NULL,NULL),(26,15,'bry','asdsa','In Progress',NULL,NULL),(29,9,'bnm','asdsa','In Progress',NULL,NULL),(39,9,'s','k','Pending',NULL,NULL),(40,9,'asdsa','sad','In Progress',NULL,NULL),(41,9,'dsa','sadsa','In Progress',NULL,NULL),(42,9,'dsa','sadsa','In Progress',NULL,NULL),(43,9,'dsa','sadsa','In Progress',NULL,NULL),(44,9,'dsa','sadsa','In Progress',NULL,NULL),(45,9,'dsa','asdsa','In Progress',NULL,NULL),(46,9,'asdsa','dsa','In Progress',NULL,NULL),(47,9,'sadsa','asdsad','Completed',NULL,NULL),(48,9,'sadsa','asdsa','In Progress',NULL,NULL),(49,9,'asdsa','asd','In Progress',NULL,NULL),(50,9,'asdsa','sadsa','In Progress',NULL,NULL),(51,9,'asd','sadsa','In Progress',NULL,NULL),(52,25,'Django is shit','why use html if have php??','Pending',NULL,NULL);
+INSERT INTO `tasks` VALUES (54,26,'Personal Meditation Practice','Establish a daily meditation practice to promote mindfulness and reduce stress. Start with short sessions, gradually increasing the duration.','Pending',NULL,NULL),(55,26,'Complete Work Project Report','Compile and finalize the project report for the recent work assignment. Review all relevant data, analyze findings, and present them in a clear and concise manner. ','In Progress',NULL,NULL),(56,26,'Online Shopping for Household Essentials',' Make a list of essential household items that need to be restocked, such as cleaning supplies, toiletries, or pantry staples. ','Completed',NULL,NULL),(57,27,'Enroll in an Online Course',' Explore online educational platforms and identify a course that aligns with your interests or professional development goals. Read course descriptions, reviews, and syllabi to make an informed decision. ','Pending',NULL,NULL),(58,27,' Plan a Weekend Getaway',': Research and plan a weekend getaway for yourself or with loved ones. Explore different destinations, accommodations, and activities that align with your preferences and budget. ','In Progress',NULL,NULL),(59,27,' Learn a New Language','Choose a language you\'ve always wanted to learn and create a plan to study it. Identify online language learning resources, such as apps, websites, or language exchange platforms. ','Completed',NULL,NULL);
 /*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -458,7 +457,7 @@ CREATE TABLE `users` (
   `password` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -467,7 +466,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'qwe','$2y$10$WbhbIs.iwT8kMDCL1SvyK.Gh0Hvmjbm9WJZVm6WcQPW5QJjICEMbi','qwe@qwe'),(2,'qwe','$2y$10$t2ynN5q..BjFq7Z8wrz1WO54EkxjEFoD82tQYRmDhpPRGA3FvVQg2','adsa@qeqw'),(3,'asd','$2y$10$yT5RVIxQMWBAjdShIR5zQejRh3/vhGO9SJAO.vDBwb113JZBG9Czy','asd@asd'),(4,'qwe',NULL,'qwe@q'),(5,'sad','sad','qwe@qwe'),(6,'bry','bry','sad@sad'),(7,'sad','sadsad','wqe@ewq'),(8,'sad','ty','sad@sad'),(9,'dsad','sadsa','dsa@sad'),(10,'bry','qwe','bry@bry'),(11,'bry','sad','qwe@ewq'),(12,'bry','qwe','rty@rty'),(13,'zxc','qwe','zxc@zxc'),(14,'asdsa','sadsa','sda@asd'),(15,'bry','bry123','bry@gmail.com'),(21,'uwu','qwe','u@u'),(22,'asds','qwe','a@a'),(23,'qwe','qwe','q@Q'),(24,'sdsa','qwezx','asd@asd'),(25,'bry','dotawtf12345','oncebryan52@gmail.com');
+INSERT INTO `users` VALUES (26,'Frisah','frisah123','frisah@gmail.com'),(27,'Honelyn','honelyn123','honelyn@gmail.com');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -480,4 +479,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-10 13:13:42
+-- Dump completed on 2023-06-12 20:33:03
